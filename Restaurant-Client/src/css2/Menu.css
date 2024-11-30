@@ -1,0 +1,130 @@
+.text-center {
+    text-align: center;
+}
+
+.mb-12 {
+    margin-bottom: 3rem; /* 12 * 0.25rem */
+}
+
+.flex {
+    display: flex;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.space-x-4 > * + * {
+    margin-left: 1rem; /* Space between children */
+}
+
+.icon {
+    width: 60px; /* Default size */
+    height: auto;
+}
+
+@media (min-width: 640px) {
+    .icon {
+        width: 100px; /* Adjust size on larger screens */
+    }
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #826a45;
+    font-weight: 600;
+}
+
+.main-title {
+    font-size: 2.25rem; /* 4xl */
+    font-weight: bold;
+    margin: 0.5rem 0 1rem; /* mt-2 mb-4 */
+}
+
+.divider {
+    border-top: 2px solid #f00; /* red-500 */
+    width: 6rem; /* 24 */
+    margin: 0 auto;
+}
+
+.feedback-container {
+    position: relative;
+    width: 100%;
+    max-width: 40rem; /* Adjust as needed */
+    margin: 2rem auto; /* mt-8 mb-10 */
+}
+
+.feedback {
+    display: flex;
+}
+
+.feedback-image {
+    width: 50%;
+    object-fit: cover;
+}
+
+.feedback-text {
+    position: relative;
+    height: 16rem; /* Adjust height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 2rem; /* Adjust as needed */
+    width: 50%;
+}
+
+.slide {
+    position: absolute;
+    transition: opacity 0.5s;
+}
+
+.rating {
+    color: #fbbf24; /* yellow-400 */
+    font-weight: bold;
+}
+
+.feedback-title {
+    font-size: 1.5rem; /* 2xl */
+    font-weight: bold;
+}
+
+.feedback-description {
+    margin-top: 0.5rem; /* mt-2 */
+    color: #e5e7eb; /* gray-300 */
+}
+
+.author-details {
+    margin-top: 1rem; /* mt-4 */
+}
+
+.author {
+    font-weight: 600; /* font-semibold */
+}
+
+.position {
+    color: #f00; /* red-500 */
+    font-size: 0.875rem; /* text-sm */
+}
+
+.navigation-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem; /* mt-4 */
+    gap: 0.5rem; /* space-x-2 */
+}
+
+.dot {
+    width: 0.75rem; /* w-3 */
+    height: 0.75rem; /* h-3 */
+    border-radius: 50%;
+    background-color: #6b7280; /* gray-500 */
+}
+
+.dot.active {
+    background-color: #fbbf24; /* yellow-400 */
+}

@@ -1,0 +1,219 @@
+@import url("../css/root.css");
+.footer {
+    position: relative;
+    background-color: #1b1b1b;
+}
+.header-footer-img {
+    background-image: url('../assets/header-footer-dark.png');
+    position: relative;
+    background-size: 51% auto;
+    background-repeat: repeat-x;
+    background-position: bottom center;
+    max-width: var(--screen-max);
+    height: 20px;
+    margin: 0 auto;
+    z-index: 1;
+}
+.footer-container {
+    position: relative;
+    background-color: #2e2d2d;
+    border-top: 1px solid #2e2d2d;
+    color: white;
+    display: flex;
+    padding: 80px;
+    margin: 0 auto;
+    max-width: var(--screen-max);
+    z-index: 1;
+}
+.title-footer {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.passage-footer {
+    padding: 0;
+    margin-bottom: 25px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #cccccc;
+}
+.text-footer {
+    color: #cccccc;
+    line-height: 1.7;
+}
+
+.about-us-footer {
+    width: 25%;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0 25px;
+}
+.social-media-icons-about-us-footer {
+    display: inline-flex;
+}
+.icon-ab-footer {
+    margin: 10px 10px 10px 0;
+    padding: 10px;
+    background-color: #3f3f3f;
+}
+.icon-fb-footer {
+    padding: 10px 13px;
+}
+
+.explore-footer {
+    width: 25%;
+    padding: 0 30px 0 65px;
+}
+.text-explore-footer {
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+.contact-info-footer {
+    width: 25%;
+    padding: 0 15px;
+
+}
+.contact-info-footer-item {
+    display: inline-flex;
+    margin-bottom: 20px;
+}
+.icon-contact-info-footer-item {
+    margin-right: 15px;
+    padding: 12px;
+    background-color: #826a45;
+    border-radius: 10px;
+    max-height: 40px;
+
+}
+.icon-location-footer {
+    padding: 12px 14px;
+}
+
+.newsletter-footer {
+    width: 25%;
+    padding: 0 15px;
+
+}
+.form-newsletter-footer {
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 10px;
+}
+.form-email-footer {
+    background-color: unset;
+}
+
+.icon-arrow-footer {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.end-footer-bgr {
+    padding-top: 200px;
+    position: absolute;
+    width: 100%;
+    top: 55%;
+    background-color: #262525;
+    z-index: 0;
+
+}
+.end-footer {
+    align-items: center;
+    padding: 30px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-footer {
+    max-width: 100px;
+}
+.text-footer-copyright {
+    color: #cccccc;
+    font-size: 16px;
+}
+
+.end-footer-bgr-animation {
+    background-image: url('../assets/animation-background2.png');
+    height: 100%;
+    position: absolute;
+    width: 25%;
+    bottom: 0;
+    background-size: cover;
+    z-index: -2;
+    opacity: 0.5;
+}
+@media (max-width: 1400px) {
+    .header-footer-img, .footer-container {
+        max-width: var(--screen-1400px);
+    }
+}
+@media (max-width:1200px) {
+    .header-footer-img, .footer-container {
+        max-width: var(--screen-1200px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .header-footer-img, .footer-container {
+        max-width: var(--screen-1024px);
+    }
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 45px;
+    }
+
+    .about-us-footer, .explore-footer, .contact-info-footer, .newsletter-footer {
+        width: unset;
+    }
+
+    .contact-info-footer, .newsletter-footer {
+        padding: 50px 25px;
+    }
+    .explore-footer {
+        padding: 0 25px;
+    }
+
+    .end-footer-bgr {
+        top :70%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .header-footer-img {
+        display: none;
+    }
+    .footer-container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding: 0;
+    }
+
+    .about-us-footer, .explore-footer, .contact-info-footer, .newsletter-footer {
+        padding: 50px 15px 25px;
+    }
+    .contact-info-footer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .end-footer-bgr {
+        top: unset;
+        padding: unset;
+    }
+    .end-footer {
+        display: block;
+        padding: unset;
+        text-align: center;
+    }
+    .logo-footer {
+        margin: 0 auto;
+        margin-top: 20px;
+    }
+    .text-footer-copyright {
+        padding: 0 0 30px 0;
+    }
+    .end-footer-bgr-animation {
+        display: none;
+    }
+}

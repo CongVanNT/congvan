@@ -1,0 +1,192 @@
+.about-page-container {
+    background-color: #1b1b1b;
+}
+.about-page-wrapper {
+    display: flex;
+    max-width: 1390px;
+    position: relative;
+    margin-bottom: 100px;
+
+    
+  }
+  
+  .about-page-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 50%;
+    height: 425px;
+}
+  
+  .about-page-image {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  .about-page-content {
+    color: #ffffff;
+    background-color: #262525;
+    width: 50%;
+    height: 400px;
+    position: absolute;
+    padding: 50px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 80px;
+    right: 80px;
+    z-index: 2;
+  }
+  
+  .about-page-title {
+    font-size: 16px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  
+  .about-page-heading {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 25px 0;
+  }
+  
+  .about-page-description {
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+  
+  .about-page-button {
+    padding: 12px 24px;
+    width: 150px;
+    background-color: #b58e5e;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .about-page-button:hover {
+    background-color: #a0784f;
+  }
+
+  /* Opening-Hours */
+  .title-restaurant-hi5 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 900;
+  }
+  .video-player {
+}
+  .opening-hours {
+    display: flex;
+    position: relative;
+    padding-bottom: 100px;
+  }
+  .opening-hours-video {
+    max-width: 55%;
+  }
+
+  .opening-hours-content {
+    width: 45%;
+    padding: 50px;
+    color: #ffffff;
+    background-color: #262525;
+    position: absolute;
+    top: 0;
+    right: 65px;
+  }
+  .opening-hours-title {
+    font-size: 30px;
+  }
+  .opening-hours-paragraph {
+    color: #cccccc;
+    margin-bottom: 25px;
+  }
+  .opening-hours-text {
+    font-size: 16px;
+    line-height: 1.6;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #cccccc;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  @media (max-width: 1400px) {
+    
+  }
+  @media (max-width: 1200px) {
+    
+  }
+  @media (max-width: 1024px) {
+    .opening-hours-video {
+        max-width: 50%;
+    }
+    .opening-hours-content {
+        width: 50%;
+        right: 0;
+    }
+    .title-restaurant-hi5 {
+        text-align: left;
+    }
+  }
+  @media (max-width: 992px) {
+    
+  }
+  @media (max-width: 768px) {
+    .about-page-wrapper {
+        display: block;
+        margin-bottom: 50px;
+    }
+    .about-page-content {
+        max-width: 525px;
+        position: unset;
+        width: 100%;
+        padding: 0;
+        background-color: unset;
+        margin: 0 auto;
+    }
+    .about-page-images {
+        display: block;
+        max-width: 525px;
+        height: 400px;
+        margin: 0 auto;
+        padding-top: 50px;
+    }
+    .about-image-right {
+        display: none;
+    }
+    .about-image-left {
+        object-position: top center;
+        width: 100%;
+    }
+
+    /* Video */
+    .opening-hours {
+        display: block;
+        padding-bottom: 0;
+    }
+    .opening-hours-video {
+        max-width: 100%;
+    }
+    .opening-hours-content {
+        position: unset;
+        width: 100%;
+        background-color: unset;
+    }
+  }
+  @media (max-width: 576px) {
+    .about-page-images {
+        max-width: 100%;
+    }
+    .about-page-content {
+        max-width: 80%;
+    }
+  }

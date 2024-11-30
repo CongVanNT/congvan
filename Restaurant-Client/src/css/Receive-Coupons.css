@@ -1,0 +1,82 @@
+@import url('../css/root.css');
+.receive-coupon {
+    margin: auto;
+    padding: 20px;
+  }
+  .receive-coupon-wrapper {
+    margin: 0 30px;
+  }
+  .title-receive-coupon {
+    color: #e7272d;
+    width: 250px;
+    margin: 0px auto;
+    position: relative;
+  }
+  .title-receive-coupon::before {
+    background-image: url('../assets/arrow-red.png');
+    position: absolute;
+    top: 60%;
+    left: 96%;
+    content: "";
+    height: 100%;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: left center;
+    margin-top: -13px;
+}
+.title-receive-coupon::after {
+    background-image: url('../assets/arrow-red.png');
+    position: absolute;
+    top: 60%;
+    right: 96%;
+    content: "";
+    height: 100%;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: right center;
+    margin-top: -13px; 
+    transform: rotate(180deg);
+}
+  
+  .receive-coupon-title {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .receive-coupon-item {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .receive-coupon-image {
+    width: auto;
+    margin: 0 auto;
+    height: 150px;
+    border-radius: 8px;
+  }
+  
+  .receive-coupon-btn {
+    display: none;
+    width: 50%;
+    margin: 0 auto;
+      padding: 10px 15px;
+      background-color: #e7272d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+  }
+  
+  .receive-coupon-btn:hover {
+    background-color: #450000;
+  }
+  
+  @media (max-width: 767px) {
+    .title-receive-coupon::after, .title-receive-coupon::before {
+        display: none;
+    }    
+  }

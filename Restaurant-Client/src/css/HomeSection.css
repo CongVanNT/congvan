@@ -1,0 +1,64 @@
+.hero-section {
+  background-image: url("../assets/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.hero-content-text {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 10%;
+}
+
+.img-hero1 {
+  background-image: url('../assets/banner.jpg');
+}
+.img-hero2 {
+  background-image: url('../assets/banner2.jpg');
+  animation-delay: 5s;
+}
+.img-hero3 {
+  background-image: url('../assets/banner3.jpg');
+  animation-delay: 10s;
+}
+.img-hero4 {
+  background-image: url('../assets/banner4.jpg');
+  animation-delay: 15s;
+}
+.img-hero5 {
+  background-image: url('../assets/bannertext.jpg');
+  animation-delay: 20s;
+}
+
+.hero-title {
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.hero-section p {
+  font-size: 1.5rem;
+}
+
+.hero-section .btn {
+  background-color: #b68955;
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.hero-section .btn:hover {
+  background-color: #a6754a;
+}

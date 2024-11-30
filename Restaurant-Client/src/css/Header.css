@@ -1,0 +1,275 @@
+@import url('./resert.css');
+@import url('./root.css');
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+
+.header {
+  font-family: Arial, sans-serif;
+  position: relative;
+  background-color: var(--color-red-background);
+  
+}
+
+.header-top {
+  display: flex;
+  max-width: 1024px;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-white);
+  padding: 0px 15px 30px;
+  margin: 0 auto;
+}
+
+.information, .login {
+  display: grid;
+  margin-left: 15px;
+}
+
+.reservation-text, .location-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.icon-phone, .icon-user {
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  padding: 20px;
+  font-size: 20px;
+}
+.location-link, .reservation-link {
+  padding-top: 10px;
+}
+
+.reservation {
+  display: flex;
+  align-items: center;
+}
+
+.reservation-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.reservation-link:hover {
+  text-decoration: underline;
+}
+
+.logo-image {
+  margin: 0 20px;
+  max-width: 120px;
+  border-left: 1px solid var(--color-white);
+  border-right: 1px solid var(--color-white);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+}
+
+.location-link {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+.location-link:hover {
+  text-decoration: underline;
+}
+
+.navbar {
+  display: flex;
+  max-width: 1024px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-white);
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  height: 60%;
+  border-radius: 10px;
+}
+.header-navbar-list, .navbar-toggle, .logo-toggle {
+  display: none;
+}
+
+.logo-header-navbar-list {
+  width: 100px;
+}
+
+#button-exit {
+  font-size: 25px;
+}
+
+.navbar-list {
+  list-style: none;
+  gap: 30px;
+  display: flex;
+}
+
+.overlay-screen-open {
+  position: fixed;
+  background: var(--color-black-overlay-bgr);
+  top: 0;
+  left: -150%;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+}
+/* CSS cho class "no-scroll" */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Đảm bảo các phần tử có thể cuộn khi lớp này được thêm */
+
+
+
+.navbar-item {
+  display: inline-block;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: var(--color-black);
+  font-weight: bold;
+}
+
+.navbar-link:hover {
+  color: #e53935;
+}
+
+.navbar-right {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-icon {
+  font-size: 18px;
+  cursor: pointer;
+}
+@media (max-width: 1200px) {
+  .header-top {
+      max-width: 1140px;
+  }
+}
+@media (max-width: 1024px) {
+  .logo {
+    display: none;
+  }
+  .navbar-list {
+
+  }
+  .logo-toggle {
+    margin: 0 auto;
+  }
+  .navbar-toggle, .logo-toggle {
+    display: block;
+  }
+  .navbar {
+    position: unset;
+    transform: none;
+    width: unset;
+    border-radius: unset;
+    padding: 0px 20px;
+  }
+  .logo-image {
+    display: none;
+  }
+  .logo-image-toggle {
+    max-width: 100px;
+
+  }
+
+  .header-top {
+    padding: 20px 25px;
+  }
+  
+
+/* css lại navbar */
+.navbar-list {
+  position: fixed;
+  flex-direction: column;
+  left: -100%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  max-width: 400px;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  list-style: none;
+  padding: 30px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  opacity: unset;
+}
+
+.overlay-screen-open.active {
+  left: 0;
+}
+
+.header-navbar-list {
+  display: flex;
+  justify-content: space-between
+}
+
+.navbar-list.active {
+  left: 0;
+}
+
+
+.navbar-item {
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--color-black);
+}
+
+.navbar-link {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.navbar-toggle {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+}
+
+@media (max-width: 992px) {
+  .header-top {
+      max-width: 960px;
+  }
+}
+@media (max-width: 768px) {
+  .header-top {
+      max-width: 720px;
+  }
+
+  .header-top {
+    display: none;
+}
+
+.navbar-icon.fa-bars {
+    display: block;
+}
+
+
+
+}
+@media (max-width: 576px) {
+  .header-top {
+      max-width: 540px;
+  }
+}
+@media (max-width: 425px) {
+  .navbar-right {
+    display: none;
+  }
+  .navbar-list {
+    max-width: 300px;
+  }
+}

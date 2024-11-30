@@ -1,0 +1,203 @@
+/* General Styles */
+.profile-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1b;
+  padding: 1rem;
+}
+
+.profile-card {
+  background-color: #2d2d2d;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 1.5rem;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  grid-column: span 3;
+  background-color: #333333;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back-button {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  color: #3182ce;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.avatar-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+}
+
+.avatar-upload-label {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.avatar-upload-input {
+  display: none;
+}
+
+.user-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 1rem; /* 16px space for shadow alignment */
+}
+
+.logout-button {
+  margin-top: auto;
+  padding: 0.5rem 1rem;
+  background-color: #e53e3e;
+  color: white;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.logout-button:hover {
+  background-color: #c53030;
+}
+
+/* Form Container Styles */
+.form-container {
+  grid-column: span 7;
+  background-color: #2d2d2d;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Adjusted for taller shadow */
+  height: auto; /* Make height flexible */
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-left, .form-right {
+  grid-column: span 1;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e2e8f0;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #4a5568;
+  border-radius: 0.375rem;
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.form-input::placeholder {
+  color: #a0aec0;
+}
+
+/* Social Input Styles */
+.social-input {
+  position: relative;
+}
+
+.social-input-field {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #4a5568;
+  border-radius: 0.375rem;
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.social-icon {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.form-submit {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.5rem;
+}
+
+.submit-button {
+  padding: 0.5rem 1.5rem;
+  background-color: #000000;
+  color: white;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #4a5568;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profile-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+      grid-column: span 12;
+      margin-bottom: 1.5rem;
+  }
+
+  .form-container {
+      grid-column: span 12;
+  }
+
+  .form-grid {
+      grid-template-columns: 1fr;
+  }
+}

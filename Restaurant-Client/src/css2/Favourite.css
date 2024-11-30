@@ -1,0 +1,239 @@
+/* General Body Styles */
+body {
+  background-color: #1b1b1b; /* Full background color */
+  color: #ffffff; /* Default text color for readability */
+  margin: 0; /* Remove default margin */
+  font-family: Arial, sans-serif; /* Optional: Set a font family */
+}
+
+/* General Container */
+.favourite-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Title */
+.favourite-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Table */
+.favourite-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2d2d2d; /* Darker background for the table */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.favourite-table-header {
+  background-color: #000000; /* Black for header */
+  color: #ffffff; /* White text */
+}
+
+.favourite-table-header th,
+.favourite-table-row td {
+  padding: 1rem;
+  border: 1px solid #444444; /* Darker border */
+  text-align: center;
+  color: #ffffff; /* White text */
+}
+
+.favourite-checkbox-header {
+  width: 50px;
+}
+
+/* Product Info */
+.favourite-product-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.favourite-product-image-container {
+  display: flex;
+  align-items: center;
+}
+
+.favourite-product-image {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.favourite-product-name {
+  margin-left: 1rem;
+  color: #ffffff; /* White text for product name */
+}
+
+/* Stock Status */
+.in-stock {
+  color: #38a169; /* Green for in-stock */
+}
+
+.out-of-stock {
+  color: #e53e3e; /* Red for out-of-stock */
+}
+
+/* Action Buttons */
+.favourite-action-cell {
+  text-align: center;
+}
+
+.favourite-add-button,
+.favourite-remove-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.favourite-add-button.enabled:hover,
+.favourite-remove-button.enabled:hover {
+  transform: scale(1.1);
+}
+
+.favourite-add-button.disabled,
+.favourite-remove-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.favourite-action-separator {
+  margin: 0 0.5rem;
+}
+
+.favourite-action-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.5rem;
+}
+
+.favourite-button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Button Styles */
+.favourite-button {
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.375rem;
+  transition: background-color 0.2s;
+  margin-top: 20px;
+}
+
+.add-selected-button {
+  background-color: #000000; /* Black button */
+}
+
+.add-selected-button:hover {
+  background-color: #4a4a4a; /* Dark gray on hover */
+}
+
+.add-all-button,
+.remove-all-button {
+  background-color: #e53e3e; /* Red button */
+}
+
+.add-all-button:hover,
+.remove-all-button:hover {
+  background-color: #c53030; /* Darker red on hover */
+}
+
+.view-cart-button {
+  background-color: #000000; /* Black button */
+  justify-content: space-between;
+  margin-left: auto;
+}
+
+
+.view-cart-button:hover {
+  background-color: #4a4a4a; /* Dark gray on hover */
+}
+
+/* Hover Effect on Table Row */
+.favourite-table-row:hover {
+  background-color: #444444; /* Dark gray hover effect */
+}
+
+/* Responsive Styling */
+
+/* Tablet Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .favourite-title {
+    font-size: 1.75rem;
+  }
+
+  .favourite-product-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .favourite-product-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .favourite-table-header th,
+  .favourite-table-row td {
+    padding: 0.75rem;
+  }
+
+  .favourite-action-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .favourite-button {
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Mobile Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .favourite-container {
+    padding: 1rem;
+  }
+
+  .favourite-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .favourite-product-info {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .favourite-product-image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .favourite-product-name {
+    margin-left: 0;
+    font-size: 0.9rem;
+  }
+
+  .favourite-table-header th,
+  .favourite-table-row td {
+    padding: 0.5rem;
+  }
+
+  .favourite-button-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .favourite-button {
+    font-size: 0.875rem;
+    padding: 0.4rem 0.6rem;
+  }
+}

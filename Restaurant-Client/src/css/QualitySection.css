@@ -1,0 +1,27 @@
+.quality-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem 0;
+  background-color: #f9f9f9;
+}
+
+.quality-item {
+  text-align: left;
+  max-width: 250px;
+}
+
+.quality-item img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+.quality-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.quality-item p {
+  font-size: 1rem;
+  color: #555;
+}
+    

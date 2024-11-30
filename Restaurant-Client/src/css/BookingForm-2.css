@@ -1,0 +1,268 @@
+.bgr-booking {
+  position: relative;
+  width: 100%;
+  background: url("../assets/bgr-booking2.png");
+}
+.bgr-booking-2 {
+  position: absolute;
+  background: #826a45;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+}
+.animation-background {
+  background: url("../assets/animation-background2.png");
+  height: 50%;
+  bottom: 0px;
+  position: absolute;
+  right: 0;
+  width: 40%;
+  background-size: cover;
+  opacity: 0.3;
+}
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    padding-top: 120px;
+    padding-bottom: 120px
+  }
+  
+  .wrapper-booking {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .booking-section{
+    flex: 1;
+  }
+  
+  .title-booking {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .label-booking {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  
+  .input-booking, .select-booking {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #826a45;
+    border-radius: 4px;
+  }
+  
+  .button-booking {
+    max-width: 180px;
+    padding: 14px 40px;
+    background-color: #826a45;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+  }
+  
+  .image-booking2 {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .hours-section {
+    flex: 1;
+    color: white;
+    padding: 0 20px;
+  }
+  
+  .hours-title {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 50px;
+  }
+  
+  .hours-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .hours-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px #ccc solid ;
+  }
+
+  .hours-item-closed {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .day {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .time {
+    font-size: 18px;
+    font-style: italic;
+  }
+  .closed-day {
+    background: white;
+    color:black ;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 1024px) {
+    .bgr-booking {
+      position: unset;  
+    }
+
+    .booking-container {
+      display: block;
+    }
+
+    .wrapper-booking {
+      padding: 15px;
+    }
+
+    .hours-section {
+      position: relative;
+      padding: 10%;
+      margin: 60px 15px 0;
+    }
+  
+    .bgr-booking-2 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .image-section {
+      order: 1;
+      padding: 0;
+    }
+  
+    .booking-section {
+      order: 2;
+      margin-left: 50px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .bgr-booking {
+      position: relative;
+    }
+
+    .booking-container{
+      margin: 0;
+    }
+
+    .wrapper-booking {
+      display: block;
+      padding: 0 10%;
+    }
+    
+    .booking-section {
+      margin: 0;
+      margin-bottom: 10%;
+    }
+    
+    .image-section {
+      padding: 0;
+    }
+    
+    
+
+  
+
+  .hours-section {
+    margin: 0;
+    position: unset;
+  }
+  .hours-title, .title-booking {
+    font-size: 36px;
+  }
+  .bgr-booking-2 {
+    height: 50%;
+    bottom: 0;
+    top: unset;
+  }
+  
+
+  }
+  
+  @media (max-width: 425px) {
+    .booking-container {
+      padding: 50px 0;
+    }
+
+    .title-booking, .hours-title {
+      text-align: center;
+    }
+  
+
+  
+    .input-booking, .select-booking {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .button-booking {
+      padding: 15px;
+      font-size: 15px;
+      margin: 0 auto;
+    }
+  
+  
+    .hours-item {
+      font-size: 12px;
+    }
+    
+    .hours-item {
+      flex-direction: column;
+    }
+    .time {
+      text-align: end;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .title-booking, .hours-title {
+      font-size: 30px;
+    }
+    
+  }

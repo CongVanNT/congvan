@@ -1,0 +1,47 @@
+4EedjINpj0f1QawQ
+
+chuquoc591
+
+model user{
+email, password, avatar, phone
+}
+
+model category{
+ten danh muc
+}
+
+model daubep{
+	ten dau bep
+}
+
+model food{
+	ten mon an
+	gia
+	so luong
+	id category
+	hinh anh
+	id dau bep
+	mota
+}
+
+model post {
+	anh, tieu de, noi dung, tac gia
+}
+
+datban{
+	sdt, so nguoi, ngay gio, id nguoi dat
+}
+
+gio hang{
+	san pham, so luong, gia, total, discount, so luong
+}
+
+order{
+	san pham, so luong, gia, total, discount, payment method, so luong, trang thai
+}
+
+
+https://server-resturent.onrender.com
+
+khanh2929381@hotmail.com
+Chukhanh@1

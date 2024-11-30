@@ -1,0 +1,99 @@
+.our-partner {
+    background-image: url("../assets/bgr-our-partner.png");
+    position: relative;
+    text-align: center;
+    padding: 120px 0;
+}
+
+.our-partner-container {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 1;
+}
+.overlay-our-partner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(235, 233, 230, 1);
+    z-index: -1;
+}
+
+.our-partner-title {
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #826a45;
+    font-weight: 600;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+.our-partner-title::before {
+    background-image: url('../assets/arrow-deal.png');
+    position: absolute;
+    top: 50%;
+    left: 105%;
+    content: "";
+    height: 100%;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: left center;
+    margin-top: -13px;
+}
+.our-partner-title::after {
+    background-image: url('../assets/arrow-deal.png');
+    position: absolute;
+    top: 50%;
+    right: 105%;
+    content: "";
+    height: 100%;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: right center;
+    margin-top: -13px; 
+    transform: rotate(180deg);
+}
+
+.slideshow-container {
+    display: flex;
+    margin-top: 40px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.slide-our-partner {
+    flex: 0 0 25%;
+    padding: 10px;
+    transition: transform 0.5s ease-out;
+    position: relative;
+    pointer-events: auto;
+}
+
+.our-partner-img {
+    margin: 0 auto;
+    height: 100px;
+    border-radius: 5px;
+    user-select: none; /* Ngăn người dùng bôi đen */
+    pointer-events: none; /* Ngăn mọi sự kiện chuột trên hình ảnh */
+}
+
+@media (max-width: 1024px) {
+    .slide-our-partner {
+        flex: 0 0 50%;
+    }
+}
+@media (max-width: 768px) {
+    .our-partner-title::after, .our-partner-title::before {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide-our-partner {
+        flex: 0 0 100%;
+    }
+}

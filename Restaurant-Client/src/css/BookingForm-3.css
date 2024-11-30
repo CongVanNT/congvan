@@ -1,0 +1,209 @@
+@import url('../css/root.css');
+.bgr-booking3 {
+    background-image: url('../assets/bgr-img-booking3.jpg');
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: 200px;
+}
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.booking-anchor-point{
+    width: 40%;
+    position: relative;
+}
+.wrapper-booking {
+    position: absolute;
+    background-color: #1b1b1b;
+    border: 1px solid #606060;
+    border-radius: 20px;
+    z-index: 1  ;
+    width: 100%;
+    bottom: -75px;
+    right: 40px;
+    
+}
+.booking-section {
+    padding: 70px 60px;
+}
+
+  .booking-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .label-booking {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  .input-booking, .select-booking {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #767676;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0);
+    color: #cccccc;
+  } 
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .label-booking {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .button-booking {
+    max-width: 180px;
+    padding: 14px 40px;
+    background-color: #e7272d;
+    font-weight: 600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .hours-section {
+    width: 50%;
+    color: white;
+    padding: 0 40px;
+    margin: 75px 0 25px;
+  }
+  .hours-title {
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 50px;
+  }
+  .hours-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  .hours-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px #ccc solid ;
+  }
+  .day {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .time {
+    font-size: 18px;
+    font-style: italic;
+  }
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: red;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+  }
+
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    color: red;
+    background-color: #ffffff;
+    width: 20px;
+    height: 20px;
+  }
+  .hours-item-closed {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+  }
+  .closed-day {
+    background: white;
+    color:black ;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+
+  @media (max-width: 1024px) {
+    .hours-section {
+
+      }
+  }
+
+  @media (max-width: 992px) {
+    .bgr-booking3 {
+        height: 1050px;
+    }
+    .booking-container {
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+
+    }
+    .booking-anchor-point,.hours-section {
+        max-width: 768px;
+        width: 90%;
+    }
+    .wrapper-booking {
+        right: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hours-title {
+        font-size: 36px;
+    }    
+    .hours-section {
+
+      }
+  }
+
+  @media (max-width: 425px) {
+    .bgr-booking3 {
+        margin-bottom: 250px;
+    }
+    .booking-section {
+        padding: 50px 30px;
+    }
+    .wrapper-booking {
+        bottom: -200px;
+    }
+    .hours-section {
+        padding: 0;
+    }
+    .hours-title {
+      text-align: center;
+    }
+    .input-booking.select-booking {
+        padding: 8px;
+        font-size: 14px;
+      }
+      .button-booking {
+        padding: 15px;
+        font-size: 15px;
+        margin: 0 auto;
+      }
+      .hours-item {
+        font-size: 12px;
+        flex-direction: column;
+      }
+      .day {
+        margin-bottom: 10px;
+      }
+      .time {
+        text-align: end;
+      }
+}
+
+@media (max-width: 320px) {
+    .hours-title {
+      font-size: 30px;
+    }
+    
+  }

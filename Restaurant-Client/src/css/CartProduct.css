@@ -1,0 +1,244 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.cart {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.cart-header {
+  /* border-top: 1px solid gray; */
+  /* border-bottom: 1px solid gray; */
+  background-color: rgb(201, 201, 201);
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  padding-left: 100px;
+}
+
+.cart-page-header {
+  display: flex;
+  align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+  list-style: none; /* Xóa dấu chấm đầu dòng cho danh sách */
+}
+
+.cart-page-logo {
+  display: flex;
+  align-items: center; /* Căn giữa logo và h3 theo chiều dọc */
+}
+
+.cart-page-logo img {
+  width: 100px;
+  height: auto;
+}
+
+.cart-page-logo h3 {
+  font-size: 20px;
+  padding-right: 10px;
+  border-right: 1px solid black;
+  line-height: 30px;
+}
+
+.cart-page-cart {
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.cart-container {
+  display: flex;
+}
+
+.cart-items {
+  width: 65%;
+  /* display: flex; */
+}
+
+.cart-table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.cart-menus {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.cart_menu td {
+  padding: 20px;
+}
+
+.cart-checkbox {
+  width: 2%;
+}
+
+.cart-product {
+  width: 35%;
+}
+
+
+.cart-price {
+  width: 13%;
+}
+
+.cart-quantity {
+  width: 17%;
+}
+
+.cart-money {
+  width: 16%;
+}
+
+.cart-manipulate {
+  width: 14%;
+}
+
+/*  */
+.cart-contents {
+  background-color: #e2e2e2;
+  border-radius: 10px;
+}
+
+.cart-content td {
+  padding: 20px;
+  text-align: center; /* Căn giữa theo chiều ngang */
+  vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+.cart-image {
+  display: flex;
+  align-items: center;
+}
+.cart-image p{
+  font-size: 14px;
+}
+
+.image {
+  width: 100px;
+  margin-right: 5px; /* Tạo khoảng cách giữa ảnh và tên sản phẩm */
+}
+.counters {
+  display: flex;
+  align-items: center;
+  /* margin-right: 50px; */
+}
+
+.counters > :is(.minus, .plus) {
+  background: transparent;
+  /* padding: 25px; */
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #9d9d9d;
+  cursor: pointer;
+}
+.minus {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.plus {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.numbers {
+  width: 43px;
+    height: 40px;
+    padding-inline: 17px;
+    /* padding-block: 25px; */
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    border: none;
+    border-bottom: 1px solid #9d9d9d;
+    border-top: 1px solid #9d9d9d;
+}
+.cart-manipulates{
+  cursor: pointer;
+  color: red;
+}
+
+.cart-summary {
+  width: 30%;
+  border: 1px solid gray;
+  margin-top:50px;
+  margin-left: 30px;
+  padding: 20px; /* Thêm khoảng cách bên trong để không dính sát viền */
+  border-radius: 10px; /* Bo góc phần tóm tắt */
+  height: fit-content; /* Để chiều cao tự động điều chỉnh theo nội dung */
+}
+.total-title{
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 20px;
+      margin-left: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.cart-sub-total{
+  width: 100%;
+  display: inline-block;
+}
+.cart-sub-total h5 span{
+  font-weight: 200;
+}
+
+.cart-sub-total li p{
+ float: left;
+}
+.cart-sub-total li {
+  padding: 5%;
+}
+.coupon{
+  margin-top: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  width: 100%;
+  border: 1px solid gray;
+}
+.cart-sub-total li:nth-child(3) {
+  padding-top: 30px;
+}
+.cart-sub-total li:nth-child(2) {
+  padding-bottom: 10px;
+  position: relative; /* Để sử dụng position cho viền */
+}
+
+.custom-border {
+  width: 80%; /* Độ dài của border bạn muốn */
+  border-bottom: 1px solid gray; /* Kiểu viền */
+  margin: 0 auto; /* Căn giữa viền */
+  position: absolute;
+  bottom: -12px; /* Đặt viền ở cuối phần tử */
+  top: 38px;
+  left: 10%; /* Điều chỉnh khoảng cách từ trái */
+  padding-bottom: 5px;
+}
+.total{
+  color: red;
+  font-weight: bold;
+}
+
+
+.cart-sub-total li h5{
+  float: right;
+  font-weight: bold;
+
+}
+.cart-abate{
+  display: flex;
+  padding-left: 20px;
+  margin: 20px 0;
+
+}
+.radio{
+  margin-right: 10px;
+}
+
+
+
