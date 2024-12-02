@@ -1,176 +1,104 @@
-import { useState } from "react"; // Importing React and useState hook
-import { FaCheck, FaTimes } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import "../css2/Favourite.css"; // Ensure the path is correct
-
-const productsData = [
-  {
-    id: 1,
-    name: "Beef Burger",
-    price: "$12.00",
-    stockStatus: "In stock",
-    image: "https://images2.thanhnien.vn/528068263637045248/2024/8/2/h3-1722573253571452686987.jpg",
-  },
-  {
-    id: 2,
-    name: "Chicken Burger",
-    price: "$10.00",
-    stockStatus: "In stock",
-    image: "https://images2.thanhnien.vn/528068263637045248/2024/8/2/h3-1722573253571452686987.jpg",
-  },
-  {
-    id: 3,
-    name: "Veggie Burger",
-    price: "$8.00",
-    stockStatus: "Out of stock",
-    image: "https://images2.thanhnien.vn/528068263637045248/2024/8/2/h3-1722573253571452686987.jpg",
-  },
-];
+import { api, url } from "../api";
+import { toast } from "react-toastify";
 
 function FavouritePage() {
-  const [selectedProducts, setSelectedProducts] = useState(
-    new Array(productsData.length).fill(false)
-  );
-  const [cart, setCart] = useState([]);
-
-  const toggleSelect = (index) => {
-    const newSelection = [...selectedProducts];
-    newSelection[index] = !newSelection[index];
-    setSelectedProducts(newSelection);
-  };
-
-  const handleAddToCart = (product) => {
-    if (product.stockStatus === "Out of stock") {
-      alert("This product is out of stock and cannot be added to the cart.");
-      return;
+  const [product, setProduct] = useState([]);
+  useEffect(() => {
+    let favouriteLocal = localStorage.getItem("favourite");
+    if (favouriteLocal) {
+      favouriteLocal = JSON.parse(favouriteLocal);
     }
-    setCart((prevCart) => [...prevCart, product]);
-    alert("Sản phẩm đã thêm vào giỏ hàng: " + product.name);
-  };
+    // console.log(cart);
 
-  const handleRemoveFromCart = (product) => {
-    setCart((prevCart) => prevCart.filter((item) => item.id !== product.id));
-    alert("Sản phẩm đã được xóa khỏi giỏ hàng: " + product.name);
-  };
+    //   setProduct(cart);
+    api
+      .post("/product/cart", favouriteLocal)
+      .then((res) => {
+        console.log(res);
+        setProduct(res.data.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
 
-  const handleAddSelectedToCart = () => {
-    const selectedItems = productsData.filter(
-      (_, index) =>
-        selectedProducts[index] &&
-        productsData[index].stockStatus === "In stock"
-    );
-    setCart((prevCart) => [...prevCart, ...selectedItems]);
-    alert("Các mặt hàng đã chọn đã được thêm vào giỏ hàng.");
-  };
+  const handleDelete = (id) => {
+    // console.log("id", id);
 
-  const handleAddAllToCart = () => {
-    const inStockProducts = productsData.filter(
-      (product) => product.stockStatus === "In stock"
-    );
-    setCart((prevCart) => [...prevCart, ...inStockProducts]);
-    alert("Tất cả đã được thêm vào giỏ hàng.");
-  };
+    setProduct(product.filter((product) => product.id !== id)); // xóa ở
+    toast.success("Đã xóa sản phẩm")
 
-  const handleRemoveAllFromCart = () => {
-    setCart([]); // Clear the cart
-    alert("Tất cả đã được xóa khỏi giỏ hàng.");
-  };
+    const itemDelete = JSON.parse(localStorage.getItem("favourite"));
 
-  const handleViewCart = () => {
-    console.log("Cart contents:", cart);
-    alert(JSON.stringify(cart, null, 2));
-  };
+    // console.log(itemDelete[id]);
+    
+    if (itemDelete && itemDelete[id]) {
+      delete itemDelete[id];
+      console.log(itemDelete);
 
-  const isInCart = (product) => cart.some((item) => item.id === product.id);
+      localStorage.setItem("favourite", JSON.stringify(itemDelete));
+    }
+
+  };
+  console.log(product)
 
   return (
-    <div className="favourite-container">
-      <h1 className="favourite-title">Sản phẩm yêu thích</h1>
-      <table className="favourite-table">
-        <thead className="favourite-table-header">
-          <tr>
-            <th className="favourite-checkbox-header">
-              <input
-                type="checkbox"
-                className="favourite-select-all-checkbox"
-                onChange={() => {
-                  const allSelected = selectedProducts.every(Boolean);
-                  setSelectedProducts(
-                    new Array(productsData.length).fill(!allSelected)
-                  );
-                }}
-              />
-            </th>
-            <th className="favourite-product-name">Tên sản phẩm</th>
-            <th className="favourite-product-price">Đơn giá</th>
-            <th className="favourite-stock-status">Tình trạng kho</th>
-            <th className="favourite-action-header">Hành động</th>
-          </tr>
-        </thead>
-        <tbody>
-          {productsData.map((product, index) => (
-            <tr key={product.id} className="favourite-table-row">
-              <td className="favourite-checkbox-cell">
-                <input
-                  type="checkbox"
-                  checked={selectedProducts[index]}
-                  onChange={() => toggleSelect(index)}
-                  className="favourite-product-checkbox"
-                />
-              </td>
-              <td className="favourite-product-info">
-                <div className="favourite-product-image-container">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="favourite-product-image"
-                  />
-                  <span className="favourite-product-name">{product.name}</span>
+    <>
+      <div className="favourite-page container-vphu">
+      <h1 className="title-cart-page title-vphu">Món ăn yêu thích</h1>
+        <div className="cart">
+          <div className="cart-container">
+            <div className="cart-header">
+              <div className="header-item">Món ăn</div>
+              <div className="header-item">Giá tiền</div>
+              <div className="header-item">Số lượng</div>
+              <div className="header-item"> Xóa</div>
+            </div>
+            {product.length === 0 ?(
+              <p className="empty-favourite-message">Món ăn yêu thích của bạn đang trống</p>
+
+            ):
+
+            product.map((item) => {
+              return (
+                <div className="cart-item" key={item.id}>
+                  <button className="remove-btn"></button>
+                  <div className="product-info">
+                    <img
+                      src={`${url}/${item.image_url}`}
+                      alt="Creamy Latte Coffee"
+                      className="productCart-image"
+                    />
+                    <div className="product-details">
+                      <h3 className="product-name">{item.name}</h3>
+                      <p className="product-description">
+                       {/* {item.summary} */}
+                       {item?.summary
+              ? item.summary.replace(/<\/?p>/g, "")
+              : "Không có thông tin"}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="product-price">{item.price} VND</p>
+                  <div className="quantity-control">
+                    {/* <button className="quantity-btn">-</button> */}
+                    <input
+                      type="number"
+                      value={item.qty}
+                      className="quantity-input"
+                      readOnly
+                    />
+                    {/* <button className="quantity-btn">+</button> */}
+                  </div>
+                  <p onClick={() =>handleDelete(item.id)} className="product-total product-delete">Xóa</p>
                 </div>
-              </td>
-              <td className="favourite-product-price">{product.price}</td>
-              <td className={`favourite-stock-status ${product.stockStatus === "In stock" ? "in-stock" : "out-of-stock"}`}>
-                {product.stockStatus}
-              </td>
-              <td className="favourite-action-cell">
-                <button
-                  className={`favourite-add-button ${product.stockStatus === "Out of stock" ? "disabled" : "enabled"}`}
-                  onClick={() => isInCart(product) ? handleRemoveFromCart(product) : handleAddToCart(product)}
-                  disabled={product.stockStatus === "Out of stock"}
-                >
-                  <FaCheck size={20} />
-                </button>
-                <span className="favourite-action-separator" />
-                <button
-                  className={`favourite-remove-button ${isInCart(product) ? "enabled" : "disabled"}`}
-                  onClick={() => handleRemoveFromCart(product)}
-                  disabled={!isInCart(product)}
-                >
-                  <FaTimes size={20} />
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <div className="favourite-action-buttons">
-        <div className="favourite-button-group">
-          <button onClick={handleAddSelectedToCart} className="favourite-button add-selected-button">
-            Thêm mục đã chọn
-          </button>
-          <button onClick={handleAddAllToCart} className="favourite-button add-all-button">
-            Thêm tất cả
-          </button>
-          <button onClick={handleRemoveAllFromCart} className="favourite-button remove-all-button">
-            Xóa tất cả
-          </button>
-        </div>
-        <div>
-          <button onClick={handleViewCart} className="favourite-button view-cart-button">
-            Xem giỏ hàng
-          </button>
+              );
+            })}
+            
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 

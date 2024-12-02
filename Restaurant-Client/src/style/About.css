@@ -1,11 +1,15 @@
 .about-page-container {
-    background-color: #1b1b1b;
+    background: url("../assets/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
+
 .about-page-wrapper {
     display: flex;
     max-width: 1390px;
     position: relative;
-    margin-bottom: 100px;
+    margin: 120px;
 
     
   }
@@ -119,6 +123,45 @@
     justify-content: space-between;
   }
   
+  /* Contact Information */
+.contact-page-info {
+  text-align: center;
+  margin-top: 50px;
+  color: #ffffff;
+}
+
+.contact-page-title {
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #b58e5e;
+}
+
+.contact-page-item {
+  font-size: 16px;
+  line-height: 1.8;
+  padding-bottom: 15px;
+}
+
+.contact-page-label {
+  font-weight: bold;
+  margin-right: 8px;
+  color: #aaaaaa;
+}
+
+.contact-page-link {
+  font-size: 16px;
+  background: none;
+  border: none;
+  color: #b58e5e;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.contact-page-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
   @media (max-width: 1400px) {
     
   }
@@ -181,6 +224,15 @@
         width: 100%;
         background-color: unset;
     }
+
+    .contact-page-info {
+      text-align: left;
+      padding: 0 20px;
+    }
+  
+    .contact-page-item {
+      font-size: 14px;
+    }
   }
   @media (max-width: 576px) {
     .about-page-images {
@@ -189,4 +241,12 @@
     .about-page-content {
         max-width: 80%;
     }
+
+    .contact-page-info {
+    padding: 0 10px;
+  }
+
+  .contact-page-item {
+    font-size: 12px;
+  }
   }

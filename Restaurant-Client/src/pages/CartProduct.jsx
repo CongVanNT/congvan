@@ -1,187 +1,158 @@
-import "../css/CartProduct.css";
-import { Logo2 } from "../assets";
-function CartProduct() {
+import { useEffect, useState } from "react";
+import "../style/CartProduct.css";
+import Modal from "../component/Modal";
+import { api } from "../api";
+// import { toast } from "react-toastify";
+
+const Cart = () => {
+  const [cartProduct, setCartProduct] = useState([]);
+  // const [cartID, setCartID] = useState();
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState([]);
+  const [error, setError] = useState(false);
+
+  let auth = localStorage.getItem("auth");
+  if (auth) {
+    auth = JSON.parse(auth);
+    console.log(auth);
+  }
+
+  let token = localStorage.getItem("token");
+  if (token) {
+    token = JSON.parse(token);
+  }
+  let config = {
+    headers: {
+      Authorization: "Bearer " + token,
+      "Content-type": "application/x-www-form-urlencoded",
+      Accept: "application/json",
+    },
+  };
+  useEffect(() => {
+    api
+      .get("/cart/list/" + auth.id, config)
+      .then((res) => {
+        console.log(res);
+        if(res.data.status){
+          setCartProduct(res.data.data);
+
+        }
+      })
+      .catch((error) => console.log(error));
+  }, []);
+
+  // Hiển thị modal khi bấm vào "Xem"
+  const handleShowDetails = (id, tableID) => {
+    console.log(id);
+    localStorage.setItem("cartID", id);
+    localStorage.setItem("tableID", tableID);
+    api
+      .get("/cart/list-product/" + id, config)
+      .then((res) => {
+        console.log(res);
+        if (res.data.status) {
+          // toast.error("")
+          setModalContent(res.data.data);
+          setError(true);
+        } else {
+          setError(false);
+          setModalContent(res.data.message);
+        }
+      })
+      .catch((error) => console.log(error));
+
+    // setModalContent(products);
+    setModalOpen(true);
+  };
+
+  const handleRemoveTable =(id) =>{
+    console.log(id)
+    api
+    .post("")
+    .then()
+    .catch()
+  }
+
+
+
+  console.log(cartProduct);
+
   return (
-    <>
-      <div className="cart-header">
-        <ul className="cart-page-header">
-          {/* <li className="cart-page-logo">
-            <img src={Logo2} alt="" />
-            <h3>HightFive</h3>
-          </li> */}
-          <li className="cart-page-cart">Shopping Cart</li>
-        </ul>
-      </div>
-      <div className="cart">
-        <div className="cart-container">
+    <div className="cart-container container-vphu">
+      <h1 className="title-cart-page title-vphu">Giỏ Hàng</h1>
+
+      {
+        cartProduct.length === 0 ? (
+      <p className="empty-cart-message">Giỏ hàng của bạn đang trống</p>
+    ) : (
+      cartProduct.map((reservation) => (
+        <div key={reservation.id} className="reservation-cart-container">
+          {/* Thông tin bàn */}
+          <div className="reservation-details">
+            <p className="reservation-table">
+              <strong>Bàn:</strong> {reservation.table_id}
+            </p>
+            <p className="reservation-guests">
+              <strong>Khách:</strong> {reservation.guest_count} người
+            </p>
+            <p className="reservation-date">
+              <strong>Ngày:</strong> {reservation.date}
+            </p>
+            <p className="reservation-time">
+              <strong>Giờ:</strong> {reservation.time}
+            </p>
+            <button
+              className="reservation-toggle-button"
+              onClick={() => handleRemoveTable(reservation.id)}
+            >
+              Xóa bàn
+            </button>
+          </div>
+
+          {/* Danh sách sản phẩm */}
           <div className="cart-items">
-            <table className="cart-table">
-              <thead className="cart-menus">
-                <tr className="cart_menu">
-                  <td className="cart-checkbox">
-                    <input type="checkbox" />
-                  </td>
-                  <td className="cart-product">Sản phẩm</td>
-                  <td className="cart-price">Đơn giá</td>
-                  <td className="cart-quantity">Số lượng</td>
-                  <td className="cart-money">Thành tiền</td>
-                  <td className="cart-manipulate">Thao tác</td>
-                </tr>
-              </thead>
-              <tbody className="cart-contents">
-                <tr className="cart-content">
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                  <td className="cart-image">
-                    <img
-                      className="image"
-                      src="https://chuphinhmenu.com/wp-content/uploads/2018/03/chup-hinh-mon-an-menu-nha-trang-khanh-hoa-0008.jpg"
-                      alt=""
-                    />
-                    <p>tên sản phẩm món ăn nó dài dài dài</p>
-                  </td>
-                  <td>200.000</td>
-                  <td>
-                    <div className="counters">
-                      <button className="minus">-</button>
-                      <input className="numbers" defaultValue={1}></input>
-                      <button className="plus">+</button>
-                    </div>
-                  </td>
-                  <td>400.000</td>
-                  <td className="cart-manipulates">Xóa</td>
-                </tr>
-                <tr className="cart-content">
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                  <td className="cart-image">
-                    <img
-                      className="image"
-                      src="https://chuphinhmenu.com/wp-content/uploads/2018/03/chup-hinh-mon-an-menu-nha-trang-khanh-hoa-0008.jpg"
-                      alt=""
-                    />
-                    <p>tên sản phẩm món ăn nó dài dài dài</p>
-                  </td>
-                  <td>200.000</td>
-                  <td>
-                    <div className="counters">
-                      <button className="minus">-</button>
-                      <input className="numbers" defaultValue={1}></input>
-                      <button className="plus">+</button>
-                    </div>
-                  </td>
-                  <td>400.000</td>
-                  <td className="cart-manipulates">Xóa</td>
-                </tr>
-                <tr className="cart-content">
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                  <td className="cart-image">
-                    <img
-                      className="image"
-                      src="https://chuphinhmenu.com/wp-content/uploads/2018/03/chup-hinh-mon-an-menu-nha-trang-khanh-hoa-0008.jpg"
-                      alt=""
-                    />
-                    <p>tên sản phẩm món ăn nó dài dài dài</p>
-                  </td>
-                  <td>200.000</td>
-                  <td>
-                    <div className="counters">
-                      <button className="minus">-</button>
-                      <input className="numbers" defaultValue={1}></input>
-                      <button className="plus">+</button>
-                    </div>
-                  </td>
-                  <td>400.000</td>
-                  <td className="cart-manipulates">Xóa</td>
-                </tr>
-                <tr className="cart-content">
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                  <td className="cart-image">
-                    <img
-                      className="image"
-                      src="https://chuphinhmenu.com/wp-content/uploads/2018/03/chup-hinh-mon-an-menu-nha-trang-khanh-hoa-0008.jpg"
-                      alt=""
-                    />
-                    <p>tên sản phẩm món ăn nó dài dài dài</p>
-                  </td>
-                  <td>200.000</td>
-                  <td>
-                    <div className="counters">
-                      <button className="minus">-</button>
-                      <input className="numbers" defaultValue={1}></input>
-                      <button className="plus">+</button>
-                    </div>
-                  </td>
-                  <td>400.000</td>
-                  <td className="cart-manipulates">Xóa</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div className="cart-summary">
-            <p className="total-title"> Cart totals</p>
-            <ul className="cart-sub-total">
-            
-              <li>
-                <p>Subtotal:</p>
-                <h5>300.000 VND</h5>
-              </li>
-              <li>
-                <p>
-                  Coupon: <span>abcxyz</span>
-                </p>
-                <h5>-20.000 VND</h5>
-                <div>
-                  <input
-                    className="coupon"
-                    type="text"
-                    name="coupon"
-                    id=""
-                    placeholder="Coupon code"
-                  />
+            <div className="cart-item-cart-product">
+              <div className="cart-item-image">
+                <span className="cart-item-image-text">
+                  Món ăn hiện tại: {reservation.count}
+                </span>
+              </div>
+              <div className="cart-item-info">
+                <div className="cart-item-name">
+                  <strong
+                    style={{ cursor: "pointer", color: "#d2a679" }}
+                    onClick={() =>
+                      handleShowDetails(reservation.id, reservation.table_id)
+                    }
+                  >
+                    Xem món
+                  </strong>
                 </div>
-                <div className="custom-border"></div>
-              </li>
-              <li>
-                <p>Fees :</p>
-                <h5>0%</h5>
-              </li>
-              <li>
-                <p className="total">Total:</p>
-                <h5 className="total">300.000 VND</h5>
-              </li>
-            </ul>
-
-            <div className="cart-abate">
-              <input type="radio" className="radio" />
-              <p>Trả tiền mặt khi vào bàn</p>
-            </div>
-            <div className="cart-abate">
-              <input type="radio" className="radio" />
-              <p>Thanh toán ngân hàng</p>
-            </div>
-            <div className="cart-abate">
-              <input type="radio" className="radio" />
-              <p>Thanh toán momo</p>
-            </div>
-            <div className="cart-abate">
-              <input type="radio" className="radio" />
-              <p>Thanh toán VNPay</p>
-            </div>
-            <div className="button-container">
-              <button className="send">Proceed to checkout</button>
+              </div>
+              <div className="cart-item-total">
+                <strong>Tổng: {reservation.total} VND</strong>
+              </div>
             </div>
           </div>
+          <button
+            className="button-checkout-item"
+            // onClick={() => handleCheckout(reservation.id)}
+          >
+            Thanh Toán
+          </button>
         </div>
-      </div>
-    </>
-  );
-}
+      ))
+    )
+    }
 
-export default CartProduct;
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setModalOpen(false)}
+        content={modalContent}
+        error={error}
+      />
+    </div>
+  );
+};
+
+export default Cart;

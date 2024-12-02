@@ -1,11 +1,9 @@
-/* General Body Styles */
-body {
-  background-color: #1b1b1b; /* Full background color */
-  color: #ffffff; /* Default text color for readability */
-  margin: 0; /* Remove default margin */
-  font-family: Arial, sans-serif; /* Optional: Set a font family */
-}
+.blog-page{
+  color: white; /* Default text color for readability */
+  background-color: #1b1b1b;
+  padding: 20px;
 
+}
 /* General Container */
 .blog-container {
   display: flex;
@@ -73,6 +71,10 @@ body {
   font-size: 1rem;
   color: #ddd; /* Light grey text for excerpts */
   margin: 10px 0 20px;
+}
+.post-excerpt p {
+  padding-bottom: 10px;
+  line-height: 1.5;
 }
 
 .post-meta {

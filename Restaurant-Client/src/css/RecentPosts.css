@@ -1,0 +1,91 @@
+.recent-posts-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.recent-posts-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.posts-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Mặc định 3 cột cho màn hình lớn */
+}
+
+.post-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+  background-color: #fff;
+}
+
+.post-card-image {
+  width: 100%;
+  height: auto;
+}
+
+.post-card-content {
+  padding: 15px;
+}
+
+.post-card-date {
+  font-size: 14px;
+  color: #888;
+}
+
+.post-card-date-text {
+  font-weight: normal;
+}
+
+.post-author {
+  font-weight: bold;
+}
+
+.post-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.post-read-more {
+  color: #333;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.post-comments {
+  font-size: 14px;
+  color: #888;
+  margin-top: 10px;
+}
+
+/* Responsive cho các màn hình nhỏ hơn */
+@media (max-width: 1024px) {
+  .posts-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho màn hình tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .posts-list {
+    grid-template-columns: 1fr; /* 1 cột cho màn hình mobile */
+  }
+
+  .post-card {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .post-title {
+    font-size: 16px;
+  }
+
+  .post-read-more,
+  .post-comments {
+    font-size: 13px;
+  }
+}

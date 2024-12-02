@@ -1,18 +1,21 @@
 @import url('../css/resert.css');
 @import url('../css/root.css');
 @import '@fortawesome/fontawesome-free/css/all.min.css';
-
-  body {
-    font-family: Arial, sans-serif;
+  
+  .app-signup {
+    text-align: center;
+    font-family: var(--font-family-text);
     background-color: #f5f5f5;
   }
-  
-  
+  .wrapper-container-signup {
+    max-width: 768px;
+    margin: 0 auto;
+  }
   .container-signup {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     padding: 20px;
   }
   
@@ -22,13 +25,13 @@
   }
   
   .welcome-section {
-    text-align: center;
+    text-align: left;
   }
   .welcome-title {
-    font-size: 32px;
+    font-size: 24px;
     color: #333;
-    margin: 20px 0;
-    font-family: 'Georgia', serif;
+    margin: 20px 0 10px;
+    font-weight: 600;
   }
   
   .highlight {
@@ -36,12 +39,11 @@
   }
   
   .logo {
-    width: 200px;
-    margin: 20px auto;
+    width: 300px;
   }
   
   .description {
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 40px;
   }
   
@@ -54,31 +56,34 @@
     background-color: white;
     max-width: 500px;
     margin: 0 auto;
-    padding: 40px;
-    border-radius: 8px;
+    padding: 20px;
+    border-radius: 3px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .form-section h3 {
-    margin-bottom: 20px;
-    color: #333;
-  }
   
-  form {
+  .form-signup {
     display: flex;
     flex-direction: column;
   }
   
-  form input {
+  .input-signup {
+    margin: auto 0;
+    color: #000000;
     margin-bottom: 15px;
     padding: 10px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+  .checkbox-button {
+    margin: auto 0;
+  }
   
   .checkbox {
     display: flex;
+    align-items: center;
+    font-size: 13px;
     margin-bottom: 20px;
     color: #868686;
   }
@@ -88,12 +93,12 @@
   }
   
   .btn {
-    padding: 10px;
+    padding: 6px;
     background-color: #1AB394;
-    color: white;
-    font-size: 16px;
+    /* color: white; */
+    font-size: 14px;
     border: none;
-    border-radius: 4px;
+    border-radius: 3px;
     cursor: pointer;
   }
   
@@ -102,28 +107,31 @@
   }
 
   .account {
-    font-size: 14px;
-    color: #666;
+    padding-top: 5px;
+    font-size: 12px;
+    color: #888888;
     line-height: 1.8;
   }
   .redirect-link {
-    color: rgba(13, 110, 253, 1);
-    text-decoration: underline;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    padding: 4px;
+    margin-top: 10px;
+    color: #888888;
   }
   
   .social-buttons {
     display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
+    justify-content: space-around;
   }
   
   .icon-social-network {
     display:flex;
     width: 45%;
-    padding: 10px;
+    padding: 13px 10px;
     font-size: 16px;
     border: none;
-    border-radius: 15px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: bolder;
   }
@@ -157,24 +165,36 @@
         flex-direction: column;
         display: block;
     }
-    .welcome-section, .form-section {
-        width: 100%;
-        padding: 10px;
-    }
-    .logo {
-        width: 150px;
-    }
-    form input, .btn {
+    .welcome-section {
+      width: 100%;
+      padding: 10px;
+  }
+  .logo {
+    margin: 0px auto;
+  }
+  .form-section {
+    width: 375px;
+    padding: 10px;
+  }
+    
+    .input-signup, .btn {
         font-size: 14px;
         padding: 8px;
+    }
+    .copyright {
+      display: none;
     }
   }
   
   @media (max-width: 480px) {
     .form-section {
+        width: 100%;
         padding: 20px;
     }
-    form input, .btn {
+    .welcome-title {
+      font-size: 22px;
+    }
+    .input-signup, .btn {
         font-size: 12px;
         padding: 6px;
     }
@@ -182,4 +202,11 @@
         padding: 8px;
         font-size: 14px;
     }
+    .logo {
+      width: 150px;
   }
+  }
+
+  form input {
+    color: #000;
+}

@@ -1,8 +1,11 @@
+@import url('../css/root.css');
 .our-partner {
     background-image: url("../assets/bgr-our-partner.png");
     position: relative;
     text-align: center;
-    padding: 120px 0;
+    padding: 50px 0;
+    margin-top: 120px;
+    background-color: #262525;
 }
 
 .our-partner-container {
@@ -23,6 +26,8 @@
 }
 
 .our-partner-title {
+    position: relative;
+    width: 350px;
     text-transform: uppercase;
     font-size: 20px;
     color: #826a45;

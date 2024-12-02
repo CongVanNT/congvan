@@ -1,0 +1,142 @@
+.master-chef-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.title-our-chef {
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+
+/* .master-chef-container h2 {
+  font-size: 36px;
+  font-weight: bold;
+} */
+
+/* Sử dụng Grid cho danh sách các đầu bếp */
+.chefs-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(5, 1fr); 
+}
+
+.chef-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+
+.chef-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.chef-card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.chef-card p {
+  color: #888;
+  margin: 5px 0 10px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.social-icons .icon-twitter,
+.social-icons .icon-facebook,
+.social-icons .icon-google,
+.social-icons .icon-instagram {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+.icon-twitter {
+  background-image: url('URL_ICON_TWITTER');
+}
+
+.icon-facebook {
+  background-image: url('URL_ICON_FACEBOOK');
+}
+
+.icon-google {
+  background-image: url('URL_ICON_GOOGLE');
+}
+
+.icon-instagram {
+  background-image: url('URL_ICON_INSTAGRAM');
+}
+
+/* Responsive cho các màn hình nhỏ hơn */
+@media (max-width: 1024px) {
+  /* .chefs-list {
+    grid-template-columns: repeat(3, 1fr);
+  } */
+}
+
+@media (max-width: 768px) {
+  .chefs-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 cột cho màn hình tablet */
+    gap: 15px;
+  }
+
+  .chef-card {
+    padding: 10px;
+  }
+
+  .chef-card h3 {
+    font-size: 16px;
+  }
+
+  .chef-card p {
+    font-size: 14px;
+  }
+
+  .social-icons .icon-twitter,
+  .social-icons .icon-facebook,
+  .social-icons .icon-google,
+  .social-icons .icon-instagram {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chefs-list {
+    grid-template-columns: 1fr; /* 1 cột cho màn hình mobile */
+    gap: 10px;
+  }
+
+  .chef-card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .chef-card img {
+    width: 80%; /* Thu nhỏ hình ảnh */
+  }
+
+  .chef-card h3 {
+    font-size: 14px;
+  }
+
+  .chef-card p {
+    font-size: 12px;
+  }
+
+  .social-icons .icon-twitter,
+  .social-icons .icon-facebook,
+  .social-icons .icon-google,
+  .social-icons .icon-instagram {
+    width: 16px;
+    height: 16px;
+  }
+}

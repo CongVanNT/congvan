@@ -12,15 +12,18 @@ import { FaTelegram } from "react-icons/fa";
 function Contact() {
   return (
     <>
-     <div className="contact-page">
+     <div className="contact-page text-vphu">
         <div className="contact">
         <div className="form-container">
             <h3 className="form-title">Liên hệ với chúng tôi</h3>
+            {/* <h3 className="form-title title-vphu">Liên hệ với chúng tôi</h3> */}
             <h4 className="form-description">
-              {" "}
-              <strong>Bạn cần hổ trợ ?</strong> Nhà hàng HightFive rất hân hạnh
+             <p className="subtitle-contact subtitle-vphu "> Bạn cần hổ trợ ?</p>
+              <p>
+               Nhà hàng HightFive rất hân hạnh
               được hổ trợ bạn, hãy để lại thông tin cho chúng tôi nhé. Yêu cầu của
               bạn sẽ được xử lí và phản hồi trong thời gian sớm nhất !!!
+              </p>
             </h4>
             <div className="contact-form">
               <div className="form-input">
@@ -63,14 +66,14 @@ function Contact() {
                 </i>
                 <span className="contact-text">Cao đẳng FPT Polytechnic</span>
               </div>
-              <a className="contact-text-item"> Rosemead, CA 91770 </a>
+              <a className="contact-text-item"> 116 Nguyễn Huy Tưởng, Hòa Minh, Liên Chiểu </a>
               <div className="contact-info">
                 <i className="contact-icon">
                   <IoMdPhonePortrait />
                 </i>
-                <span className="contact-text">079 79 79 79</span>
+                <span className="contact-text">+84 123 4567</span>
               </div>
-              <a className="contact-text-item"> Mon to Fri 9am to 6pm </a>
+              <a className="contact-text-item"> Thứ 2 đến Chủ nhật: 09:00-22:00</a>
               <div className="contact-info">
                 <i className="contact-icon">
                   <IoMailOpen />
@@ -79,7 +82,7 @@ function Contact() {
                   HightFiverestaurant@gmail.com
                 </span>
               </div>
-              <a className="contact-text-item"> Send us your query anytime!!</a>
+              <a className="contact-text-item"> Gửi cho chúng tôi phản hồi của bạn bất cứ lúc nào!!</a>
               <div className="contact-icon-website">
                 <i><FaSquareInstagram/></i>
                 <i><FaFacebook/></i>

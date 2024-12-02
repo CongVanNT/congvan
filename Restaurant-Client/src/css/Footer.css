@@ -1,7 +1,7 @@
 @import url("../css/root.css");
 .footer {
     position: relative;
-    background-color: #1b1b1b;
+    background-color: #110e14;
 }
 .header-footer-img {
     background-image: url('../assets/header-footer-dark.png');
@@ -26,18 +26,19 @@
     z-index: 1;
 }
 .title-footer {
-    font-size: 24px;
+    font-size: 20px;
     margin-bottom: 30px;
 }
 .passage-footer {
     padding: 0;
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.7;
     color: #cccccc;
 }
 .text-footer {
     color: #cccccc;
+    font-size: 14px;
     line-height: 1.7;
 }
 
@@ -63,7 +64,7 @@
     padding: 0 30px 0 65px;
 }
 .text-explore-footer {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
     color: #cccccc;
 }
 
@@ -75,11 +76,12 @@
 .contact-info-footer-item {
     display: inline-flex;
     margin-bottom: 20px;
+    align-items: center;
 }
 .icon-contact-info-footer-item {
     margin-right: 15px;
     padding: 12px;
-    background-color: #826a45;
+    background-color: #e7272d;
     border-radius: 10px;
     max-height: 40px;
 
@@ -96,7 +98,6 @@
 .form-newsletter-footer {
     position: relative;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    padding-bottom: 10px;
 }
 .form-email-footer {
     background-color: unset;

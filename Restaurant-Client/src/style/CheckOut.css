@@ -1,0 +1,192 @@
+.restaurant-content {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.restaurant-map {
+  width: 48%;
+  margin-bottom: 30px;
+}
+.title-restaurant-map {
+  text-align: center;
+  color: #e7272d;
+  font-weight: bolder;
+}
+
+.choose-table-box {
+  width: 48%;
+  margin-bottom: 30px;
+}
+
+
+
+.restaurant-map-image-wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.restaurant-map-item-image {
+  width: 50%;
+}
+
+.restaurant-map-image-text {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+  margin: 10px;
+}
+
+.choose-table-box {
+  text-align: center;
+}
+
+.choose-table-title {
+  color: #e7272d;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.choose-table-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.table-button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.table-button:hover {
+  background-color: #d2a679;
+}
+
+.table-button-active {
+  background-color: #27ae60;
+  color: white;
+  font-weight: bold;
+}
+
+.table-button-active:hover {
+  background-color: #219150;
+}
+
+.reservation-container {
+  margin: 0px auto;
+  padding: 20px 15px;
+}
+
+.reservation-title-checkout {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  border-bottom: 2px solid #ddd;
+}
+
+.reservation-header {
+  background-color: #e7272d;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.reservation-header-text {
+  margin: 0;
+  font-size: 14px;
+}
+
+.phone-checkout {
+  font-weight: 600;
+}
+
+.reservation-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.title-info-book-table {
+  color: #e7272d;
+  text-align: center;
+  font-weight: bolder;
+  margin-bottom: 20px !important;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.preinstall-book {
+  color: #888;
+  padding: 10px;
+ 
+}
+.btn-submit-checkout {
+  background-color: #e7272d;
+}
+.btn-submit-checkout:hover {
+  background-color: #930005;
+}
+
+.filled-input {
+  background-color: #f4f4f4;
+  border-color: #bbb;
+  color: black;
+}
+
+/* Nếu người dùng không thể thay đổi giá trị, có thể làm cho nó trở nên mờ hơn */
+.filled-input[readonly] {
+  background-color: #949494;
+  color: black;
+}
+
+/*  */
+.table-button-disabled {
+  background-color: #838181;
+  color: #fff;
+  cursor: not-allowed;
+}
+.table-button-disabled:hover{
+  background-color: #838181;
+}
+
+/*  */
+@media (max-width: 1024px) {
+  .restaurant-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .restaurant-map, .choose-table-box {
+    width: 100%;
+  }
+}
+
+@media (max-width:768px) {
+  .restaurant-map-image-wrapper {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .restaurant-map-item-image {
+    width: unset;
+  }
+}

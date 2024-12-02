@@ -1,0 +1,239 @@
+/* Dark Mode - Cấu trúc chính */
+.dark-mode {
+    background-color: #181818;
+    color: #f5f5f5;
+  }
+  
+  /* Container */
+  .checkout-pay-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Tiêu đề trang */
+  .checkout-pay-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  .reservation-title {
+    color: #e7272d;
+  }
+  .reservation-items {
+    margin-bottom: 5px;
+  }
+  
+  /* Bảng sản phẩm */
+  .checkout-pay-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .checkout-pay-header-product,
+  .checkout-pay-header-subtotal {
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #333;
+    padding: 10px;
+  }
+  
+  .checkout-pay-product-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .checkout-pay-product-image {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+  }
+  
+  .checkout-pay-product-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .checkout-pay-product-name {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f5f5f5;
+  }
+  
+  .checkout-pay-product-quantity {
+    font-size: 12px;
+    color: #aaa;
+  }
+  
+  .checkout-pay-product-price {
+    text-align: right;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+  /* Tổng cộng */
+  .checkout-pay-subtotal-title {
+    font-weight: bold;
+    border-top: 2px solid #333;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .checkout-pay-subtotal-amount {
+    font-weight: bold;
+    border-top: 2px solid #333;
+    padding: 10px;
+    text-align: right;
+    color: #e7272d;
+  }
+  
+  /* Phương thức thanh toán */
+  .checkout-pay-payment-methods {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  .checkout-pay-payment-methods-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .checkout-pay-payment-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .checkout-pay-payment-option input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .checkout-pay-payment-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  /* Nút hành động */
+  .checkout-pay-action {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .checkout-pay-button {
+    background-color: #e7272d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .checkout-pay-button:hover {
+    background-color: #e0554d;
+  }
+  
+/* Responsive Design */
+@media (max-width: 767px) {
+    .checkout-pay-container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+
+    .checkout-pay-table {
+        font-size: 14px;
+    }
+
+    .checkout-pay-product-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .checkout-pay-product-image {
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .checkout-pay-product-price {
+        text-align: left;
+    }
+
+    .checkout-pay-payment-methods {
+        font-size: 14px;
+    }
+
+    .checkout-pay-payment-methods-title {
+        font-size: 18px;
+    }
+
+    .checkout-pay-payment-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .checkout-pay-container {
+        padding: 20px;
+        max-width: 90%;
+    }
+
+
+    .checkout-pay-table {
+        font-size: 16px;
+    }
+
+    .checkout-pay-product-info {
+        flex-direction: row;
+    }
+
+    .checkout-pay-product-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .checkout-pay-payment-methods {
+        font-size: 16px;
+    }
+
+    .checkout-pay-payment-icon {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (min-width: 1025px) {
+    .checkout-pay-container {
+        padding: 40px;
+        max-width: 75%; /* Điều chỉnh chiều rộng container */
+    }
+
+
+
+    .checkout-pay-table {
+        font-size: 18px;
+    }
+
+    .checkout-pay-payment-methods {
+        font-size: 16px;
+    }
+
+    .checkout-pay-payment-icon {
+        width: 30px;
+        height: 30px;
+    }
+}

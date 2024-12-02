@@ -1,101 +1,132 @@
 import "../css/FavoriteFood.css";
 import { useEffect, useState } from "react";
-// import { api } from "../api";
-import imgFavoriteFood from "../assets/favorite-food.jpg";
-import user from "../assets/user.png";
-import { api } from "../api";
+import { api, url } from "../api";
+import { toast } from "react-toastify";
+import { Link, useLocation } from "react-router-dom";
 
 const FoodCategory = () => {
-  // Khai báo state để lưu danh sách món ăn
   const [foodItems, setFoodItems] = useState([]);
+  const [tableId, setTableId] = useState(null);
 
-  // Dữ liệu mẫu
-  const sampleFoodItems = [
-    {
-      id: 1,
-      name: "Miếng Pizza",
-      description: "Phô mai, Thịt nguội & Dứa",
-      rating: 5.0,
-      image: imgFavoriteFood,
-      orderLink: "#",
-    },
-    {
-      id: 2,
-      name: "Burger Phô Mai",
-      description: "Bánh mì kẹp thịt bò tươi với phô mai và rau tươi",
-      rating: 4.8,
-      image: imgFavoriteFood,
-      orderLink: "#",
-    },
-    {
-      id: 3,
-      name: "Thiên Đường Gà",
-      description: "Gà nướng với sốt đặc biệt",
-      rating: 4.5,
-      image: imgFavoriteFood,
-      orderLink: "#",
-    },
-    {
-      id: 4,
-      name: "Shawarma",
-      description: "Thịt cừu ngon với sốt tỏi",
-      rating: 5.0,
-      image: imgFavoriteFood,
-      orderLink: "#",
-    },
-  ];
+  let favouriteLocal = localStorage.getItem("favourite");
+  if (favouriteLocal) {
+    favouriteLocal = JSON.parse(favouriteLocal);
+  }
+  const [favourite, setFavourite] = useState(favouriteLocal); // lấy local ra để thêm tiếp tục sản phẩm
+
+  const location = useLocation();
 
   useEffect(() => {
-    // Gọi API để lấy danh sách món ăn
-    // api
-    //   .get("/products") // Đường dẫn đến API
-    //   .then((res) => {
-    //     console.log(res);
-    //     if (res && res.data && res.data.products) {
-    //       const items = res.data.products.map(item => ({
-    //         id: item.id,
-    //         name: item.name,
-    //         description: item.description,
-    //         rating: item.rating,
-    //         image: item.image || imgFavoriteFood,
-    //         orderLink: item.orderLink || "#",
-    //       }));
-          setFoodItems(sampleFoodItems); // Cập nhật danh sách món ăn từ API
-    //     //   console.log("Đã lấy được danh sách món ăn thành công");
-    //     }
-    //   })
-    //   .catch((error) => {
-    //     console.error("Có lỗi xảy ra khi lấy danh sách món ăn:", error);
-    //     // Sử dụng dữ liệu mẫu nếu có lỗi
-    //     // setFoodItems(sampleFoodItems); 
-    //   });
+    api
+      .get("/latestProducts")
+      .then((res) => {
+        console.log(res);
+        setFoodItems(res.data.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
 
+  useEffect(() => {
+    // Lấy query param từ URL
+    const params = new URLSearchParams(location.search);
+    // console.log(params)
+
+    const id = params.get("tableId");
+    // console.log(id);
+    if (id) {
+      setTableId(id);
+      toast.info(`Bạn đang đặt món cho bàn số: ${id}`);
+    }
+  }, [location]);
+
+  const addToCart = () => {
+    if (!tableId) {
+      toast.error("Vui lòng đặt bàn");
+      return;
+    }
+  };
+  const addToFavourite = (id) => {
+    let token = localStorage.getItem("token");
+   
+    if(!token){
+      toast.error("Vui lòng đăng nhập")
+    }else{
+    token = JSON.parse(token);
+      const newFavourite = { ...favourite }; // giữ lại dữ liệu trước đó
+
+      if (newFavourite[id]) {
+        // nếu id có rồi, tức là qty > 1 thì +1
+        // lấy id làm key của newCart
+        newFavourite[id] += 1;
+        toast.success("Thêm vào yêu thích thành công");
+      } else {
+        // nếu id chưa có thì là lấy id đó làm key rồi cho bằng qty là bằng 1
+        newFavourite[id] = 1;
+        toast.success("Thêm vào yêu thích thành công");
+      }
+
+      // console.log(newCart);
+      setFavourite(newFavourite);
+      // abc(newCart)
+      setFavourite(newFavourite);
+      // lưu vào local
+      localStorage.setItem("favourite", JSON.stringify(newFavourite));
+    }
+
+  };
+
   return (
-    <div className="food-category container-vphu">
-      <h2 className="category-title">Món Ăn Ngon Nhất</h2>
+    <div className="food-category container-vphu text-vphu">
+      <h4 className="category-subtitle subtitle-vphu">MÓN ĂN</h4>
+      <h2 className="category-title title-vphu">Top Thực Phẩm Nổi Bật</h2>
       <div className="food-items">
         {foodItems.map((item) => (
           <div className="food-card" key={item.id}>
-            <img src={item.image} alt={item.name} className="food-image" />
+            <Link className="menu-image" to={"product-detail/" + item.slug}>
+              <img
+                src={`${url}/${item.image_url}`}
+                alt={item.name}
+                className="food-image"
+              />
+            </Link>
             <div className="rating-section">
               <span className="rating">
-                <i className="fa-solid fa-star icon-star"> </i>
-                {item.rating}
+                <i className="fa-solid fa-star icon-star"></i>
+                <p className="number-stars">{item.rating}</p>
               </span>
-              <div className="reviewers">
-                <img src={user} alt="người đánh giá" />
-                <img src={user} alt="người đánh giá" />
-                <img src={user} alt="người đánh giá" />
+              <div
+                className="reviewers "
+                // className={`reviewers ${clickedReviewer.some((i) => i.id === item.id) ? "clicked" : ""}`}
+                // onClick={() => handleReviewerClick(item.id, item)}
+                  onClick={() =>addToFavourite(item.id)}
+              >
+                <i
+                  className="fa-regular fa-heart clicked-icon"
+                ></i>
               </div>
             </div>
             <div className="food-info">
-              <h3 className="food-name">{item.name}</h3>
-              <p className="food-description">{item.description}</p>
-              <a href={item.orderLink} className="order-link">
-                <p className="order-now">ĐẶT NGAY</p>
-                <i className="fa-solid fa-arrow-right fa-rotate-by icon-arrow"></i>
-              </a>
+              <Link to={"/product-detail/" + item.slug}>
+                <h3 className="food-name">{item.name}</h3>
+              </Link>
+              <p className="favorite-food-description">
+                {/* {item.ingredients} */}
+                {JSON.parse(item.ingredients)
+                  .map((ing) => ing.value)
+                  .join(", ")}
+              </p>
+              <div className="btn-oder">
+                <a href={item.orderLink} className="order-link">
+                  <p className="order-now" onClick={() => addToCart()}>
+                    Đặt Ngay
+                  </p>
+                  <div className="icon-arrow">
+                    <i className="fa-solid fa-arrow-right fa-rotate-by"></i>
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         ))}

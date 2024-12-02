@@ -81,7 +81,7 @@ function OurPartner() {
   return (
     <div className="our-partner">
       <div className="our-partner-container container-vphu">
-        <h4 className="our-partner-title">OUR TRUSTED 8K HAPPY PARTNER</h4>
+        <h4 className="our-partner-title subtitle-vphu">ĐỐI TÁC TIN CẬY CỦA CHÚNG TÔI</h4>
         <div
           className="slideshow-container"
           ref={slideRef}

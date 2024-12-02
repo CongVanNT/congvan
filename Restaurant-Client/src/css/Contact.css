@@ -1,3 +1,6 @@
+@import url("./root.css");
+
+
 .contact-page{
     background-color: #1b1b1b;
     color: white;
@@ -8,7 +11,7 @@
     margin: 0 auto;
 }
 .contact-item{
-    margin-top: 30px;
+    margin-top: 10px;
     display: inline-block;
     width: 100%;
 }
@@ -29,10 +32,13 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Tạo bóng khi hover */
 }
 .contact__header{
+    background-color: #262525;
     float: right;
     vertical-align: top;
     margin-top: 125px;
     padding-right: 88px;
+    padding-left: 10px;
+    padding-bottom: 10px;
 
 }
 .contact-info{
@@ -50,8 +56,8 @@
 
 }
 .contact-text-item{
-    font-size: 15px;
-    font-weight: 20px;
+    font-size: 12px;
+    /* font-weight: 20px; */
     color: gray;
     padding-left: 50px;
 }
@@ -62,7 +68,6 @@
 
 }
 .form-title{
-    font-size: 26px;
     font-weight: bold;
     width: 280px;
     /* text-align: center; */
@@ -74,17 +79,16 @@
     /* border-radius: 10px; */
     margin-bottom: 17px;
 }
-.form-description strong{
-    font-size: 17px;
+.subtitle-contact{
+    /* padding-bottom: 5px; */
     font-weight: bold;
-    /* color: gray; */
 }
 
 .contact-form{
     width: 100%;
     /* margin: 0 auto; */
     margin-top: 20px;
-    background-color:black;
+    background-color: #262525;
     padding: 20px;
     border-radius:10px;
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng */
@@ -186,6 +190,7 @@
         display: inline-block;
     }
     .contact__header {
+        background-color: #262525;
         width: 37%;
         float: right;
         vertical-align: top;
@@ -258,7 +263,8 @@
     }
 
     .contact__header {
-       
+        background-color: #262525;
+        padding-left: 10px;
         padding-right:0;
     }
     .contact-text {
@@ -300,13 +306,15 @@
 
   @media only screen and (min-width: 426px) and (max-width: 768px){
     .contact {
-        width: 100%;
+        width: 95%;
      
     }
     .form-container {
         width: 100%;
     }
     .contact__header {
+        background-color: #262525;
+        padding-left: 10px;
         width: 100%;
         margin: 0;
         /* float: right; */
@@ -318,14 +326,18 @@
 }
 @media only screen and (max-width: 425px){
     .contact {
-        width: 100%;
+        width: 93%;
+        /* margin: 0 auto; */
      
     }
     .form-container {
         width: 100%;
+        margin-bottom: 20px;
     }
     .contact__header {
+        background-color: #262525;
         width: 100%;
+        padding-left: 10px;
         margin: 0;
         /* float: right; */
         /* vertical-align: top; */
@@ -338,6 +350,13 @@
         width: 275px;
         padding: 5px;
         margin-bottom: 8px;
+    }
+    .food-description {
+        width: 93%;
+        margin: 12px auto;
+        padding: 15px;
+        background-color: #262525;
+        border-radius: 8px;
     }
     .form-description strong {
         font-size: 14px;
